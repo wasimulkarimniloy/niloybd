@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="2-removebg-preview.png" type="image/gif" >
         <meta name="description" content="">
@@ -25,9 +26,67 @@
         <link href="css/templatemo-first-portfolio-style.css" rel="stylesheet">
        <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="166f8335-8611-468b-84a9-1878d4c4147b";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 
+<style>
+        .modal-content {
+            border-radius: 0.5rem;
+        }
+
+        .rgb-animated {
+            animation: rgb-animation 3s infinite;
+        }
+
+        @keyframes rgb-animation {
+            0% { background-color: red; }
+            33% { background-color: green; }
+            66% { background-color: blue; }
+            100% { background-color: red; }
+        }
+    </style>
     </head>
     
     <body>
+<!-- Button to trigger modal -->
+    <!-- Hidden by default -->
+    <button type="button" id="popupTrigger" class="btn btn-primary d-none" data-toggle="modal" data-target="#downloadModal">
+        Download App
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="downloadModalLabel">Download Our Android App</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Get our app for a better experience.</p>
+                    <a href="https://drive.usercontent.google.com/download?id=1g-A3TutbdiFt8sT-Y0Vc9JHZoV3gEyTF&export=download" class="btn btn-success mb-2">
+                        Download mobile app
+                    </a>
+                    <br>
+                    <button type="button" class="btn btn-secondary rgb-animated" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Show the modal after a delay or immediately on page load
+        window.onload = function() {
+            // Delay popup for 3 seconds
+            setTimeout(function() {
+                document.getElementById('popupTrigger').click();
+            }, 3000);
+        };
+    </script>
         <audio loop autoplay>
     <source src="0420.MP3" type="audio/mp3">
   </audio>
