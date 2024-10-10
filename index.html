@@ -27,31 +27,42 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles for the notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050; /* Ensure it's above other elements */
+        }
+    </style>
 </head>
 
 <body class="index-page">
 
-  <div class="container mt-5">
-    <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alertMessage">
-        Welcome to our website! Enjoy your stay.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+
+    <div class="notification">
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong>Welcome!</strong> Thanks for visiting our website. Enjoy your stay!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
     </div>
-</div>
 
-<!-- jQuery and Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<script>
-    // Show alert message when the page loads
-    window.onload = function() {
-        document.getElementById('alertMessage').style.display = 'block';
-    };
-</script>
+    <script>
+        // Automatically show the notification on page load
+        $(document).ready(function() {
+            $('.alert').alert();
+        });
+    </script>
   
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
